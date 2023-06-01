@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
+import checker from 'vite-plugin-checker';
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/web',
@@ -20,6 +21,9 @@ export default defineConfig({
     react(),
     viteTsConfigPaths({
       root: '../../',
+    }),
+    checker({
+      typescript: true,
     }),
   ],
 
